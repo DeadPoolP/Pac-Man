@@ -5,7 +5,8 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public PlayerController _player;
-    private const int totalDots = 312;
+    [SerializeField]
+    private const int totalDots = 310;
 
  
 
