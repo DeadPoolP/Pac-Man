@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerMotor : MonoBehaviour
 {
-    public float speed;
+    [SerializeField]
+    private float speed = 4f;
     private Rigidbody _rigidbody;
     private Transform _transform;
-    public bool validDirection;
 
     private void Awake()
     {
@@ -29,31 +29,31 @@ public class PlayerMotor : MonoBehaviour
 
     void FixedUpdate()
     {
-        NonStopMove();
+        if (CheckDirection(_transform.forward))
+            NonStopMove();
     }
 
     public void NonStopMove()
     {
-        if (CheckDirection(_transform.forward))
-            _rigidbody.MovePosition(_transform.position + speed * Time.deltaTime * _transform.forward);
+        _rigidbody.MovePosition(_transform.position + speed * Time.deltaTime * _transform.forward);
     }
 
-    public void Up()
+    public void MoveUp()
     {
         Rotate(0f);
     }
 
-    public void Down()
+    public void MoveDown()
     {
         Rotate(180f);
     }
 
-    public void Right()
+    public void MoveRight()
     {
         Rotate(90f);
     }
 
-    public void Left()
+    public void MoveLeft()
     {
         Rotate(-90f);
     }
@@ -66,9 +66,9 @@ public class PlayerMotor : MonoBehaviour
     public bool CheckDirection(Vector3 direction)
     {
         RaycastHit hit;
-        if (Physics.Raycast(_transform.position, direction, out hit, 0.55f))
+        if (Physics.Raycast(_transform.position, direction, out hit, 1f))
         {
-            return (!hit.transform.CompareTag("Wall"));
+            return !(hit.transform.CompareTag("Wall"));
         }
         return true;
     }
