@@ -30,12 +30,16 @@ public class PlayerMotor : MonoBehaviour
     void FixedUpdate()
     {
         if (CheckDirection(_transform.forward))
+        {
             NonStopMove();
+
+        }
+        
     }
 
     public void NonStopMove()
     {
-        _rigidbody.MovePosition(_transform.position + speed * Time.deltaTime * _transform.forward);
+        _rigidbody.MovePosition(_transform.position + speed * Time.fixedDeltaTime * _transform.forward);
     }
 
     public void MoveUp()
@@ -66,7 +70,7 @@ public class PlayerMotor : MonoBehaviour
     public bool CheckDirection(Vector3 direction)
     {
         RaycastHit hit;
-        if (Physics.Raycast(_transform.position, direction, out hit, 1f))
+        if (Physics.Raycast(_transform.position, direction, out hit, 0.8f))
         {
             return !(hit.transform.CompareTag("Wall"));
         }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Dot : MonoBehaviour
 {
     [SerializeField]
-    private int scoreValue = 1;
+    protected int scoreValue = 1;
 
     public int getScoreValue()
     {

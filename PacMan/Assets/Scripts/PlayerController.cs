@@ -5,6 +5,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public int dotsEaten = 0;
+    public int bigDotsEaten = 0;
+    public int health = 3;
+    public bool godmode = false;
+    [SerializeField]
+    private const float godmodeTime = 10f;
+    private float godmodeTimer = 0f;
+
     private PlayerMotor _playerMotor;
 
     private Vector3 _up = new Vector3(0f, 0f, 1f);
@@ -16,6 +23,9 @@ public class PlayerController : MonoBehaviour
     {
         _playerMotor = GetComponent<PlayerMotor>();
         dotsEaten = 0;
+        health = 3;
+        godmode = false;
+        
     }
 
     // Start is called before the first frame update
@@ -45,6 +55,15 @@ public class PlayerController : MonoBehaviour
         {
             _playerMotor.MoveLeft();
         }
+
+        if (godmode)
+        {
+            godmodeTimer -= Time.deltaTime;
+        }
+        if(godmodeTimer < 0)
+        {
+            godmode = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -56,8 +75,16 @@ public class PlayerController : MonoBehaviour
                 Dot currentDot = other.gameObject.GetComponent<Dot>();
                 dotsEaten++;
             }
+            if (other.gameObject.CompareTag("BigDot"))
+            {
+                BigDot currentBigDot = other.gameObject.GetComponent<BigDot>();
+                bigDotsEaten++;
+                godmode = true;
+                godmodeTimer = godmodeTime;
+            }
         }
     }    
-        
+    
+
     
 }
