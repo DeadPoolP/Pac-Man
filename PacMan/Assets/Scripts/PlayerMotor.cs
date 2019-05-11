@@ -6,9 +6,12 @@ public class PlayerMotor : MonoBehaviour
 {
     [SerializeField]
     private float speed = 4f;
+
+    [SerializeField]
+    private float wallDetectionRange = 0.8f;
+
     private Rigidbody _rigidbody;
     private Transform _transform;
-
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -70,10 +73,18 @@ public class PlayerMotor : MonoBehaviour
     public bool CheckDirection(Vector3 direction)
     {
         RaycastHit hit;
-        if (Physics.Raycast(_transform.position, direction, out hit, 0.8f))
+        if (Physics.Raycast(_transform.position, direction, out hit, wallDetectionRange))
         {
             return !(hit.transform.CompareTag("Wall"));
         }
         return true;
+    }
+
+    void OnDrawGizmosSelected()
+    {
+            
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(_transform.position, _transform.position + _transform.forward * wallDetectionRange);
+        
     }
 }

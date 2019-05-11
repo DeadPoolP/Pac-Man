@@ -7,6 +7,8 @@ TagManager:
   - Wall
   - Dot
   - BigDot
+  - Intersection
+  - Ghost
   layers:
   - Default
   - TransparentFX
