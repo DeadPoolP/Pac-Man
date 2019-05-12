@@ -9,9 +9,10 @@ public class PlayerController : MonoBehaviour
     public int health = 3;
     public bool godmode = false;
     [SerializeField]
-    private const float godmodeTime = 10f;
+    private float godmodeTime = 10f;
     private float godmodeTimer = 0f;
-
+    [SerializeField]
+    private GameObject godmodeFX;
     private PlayerMotor _playerMotor;
 
     [SerializeField]
@@ -29,7 +30,7 @@ public class PlayerController : MonoBehaviour
         dotsEaten = 0;
         health = 3;
         godmode = false;
-        
+        godmodeFX.SetActive(godmode);
     }
 
     // Start is called before the first frame update
@@ -68,6 +69,7 @@ public class PlayerController : MonoBehaviour
         {
             godmode = false;
         }
+        godmodeFX.SetActive(godmode);
     }
 
     private void Die()
