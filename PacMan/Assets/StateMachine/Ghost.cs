@@ -23,6 +23,9 @@ public class Ghost : MonoBehaviour
     private float step;
     [SerializeField]
     private Transform spawnPoint;
+    public Transform gateEntrance;
+    public Transform gateIntersection;
+
     private Animator _animator;
 
 
@@ -48,6 +51,7 @@ public class Ghost : MonoBehaviour
         _intersections = new Transform[4];
         GetAllIntersections();
         currentDirection = _transform.forward;
+        _animator.SetBool("Dead", false);
         ResetAnimator();
         ResetPatrol();
     }
@@ -55,6 +59,10 @@ public class Ghost : MonoBehaviour
     public void Die()
     {
         _transform.position = spawnPoint.position;
+        ResetAnimator();
+        SetDead(true);
+        _animator.Play("Dead");
+        targetIntersection = gateIntersection;
     }
 
     public void ResetPatrol()
@@ -69,19 +77,26 @@ public class Ghost : MonoBehaviour
 
     public void ResetAnimator()
     {
+        SetReady(false);
         SetChasing(false);
         SetFrightened(false);
-        _animator.Play("Wander");
     }
 
     public void SetChasing(bool b)
     {
         _animator.SetBool("Chasing", b);
     }
-
+    public void SetReady(bool b)
+    {
+        _animator.SetBool("Ready", b);
+    }
     public void SetFrightened(bool b)
     {
         _animator.SetBool("Frightened", b);
+    }
+    public void SetDead(bool b)
+    {
+        _animator.SetBool("Dead", b);
     }
 
     public Vector3 GetCurrentPatrolPoint()

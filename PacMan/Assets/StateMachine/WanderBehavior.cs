@@ -19,6 +19,7 @@ public class WanderBehavior : StateMachineBehaviour
         _ghost.ResetPatrol();
         _target = _ghost.GetCurrentPatrolPoint();
         _onPatrol = false;
+        _ghost.SetReady(false);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

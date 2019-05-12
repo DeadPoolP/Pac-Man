@@ -2905,7 +2905,7 @@ Transform:
   m_Children:
   - {fileID: 1373160871}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &170438944
 MonoBehaviour:
@@ -2922,13 +2922,13 @@ MonoBehaviour:
   speed: 1
   wanderingSpeed: 2
   chasingSpeed: 3
-  fleeingSpeed: 2.5
+  fleeingSpeed: 1
   intersectionLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   _patrolPoints:
   - {fileID: 605909701}
   - {fileID: 492881256}
@@ -2942,6 +2942,8 @@ MonoBehaviour:
   currentIndex: 0
   step: 0
   spawnPoint: {fileID: 1474325179}
+  gateEntrance: {fileID: 1769204802}
+  gateIntersection: {fileID: 1537767438}
   original: {fileID: 2100000, guid: 68be5b8b0f5c3504185cebcc237586d2, type: 2}
   frightened: {fileID: 2100000, guid: e42551728a1adbc46acba60d018675bc, type: 2}
 --- !u!95 &170438945
@@ -2954,7 +2956,7 @@ Animator:
   m_GameObject: {fileID: 170438941}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3b8843602f1bcf246bd1d12cd43ee5dc, type: 2}
+  m_Controller: {fileID: 9100000, guid: 574b8d84553d2244aafcecaa286714c2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3175,7 +3177,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 207776794}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14, y: 0, z: 20}
+  m_LocalPosition: {x: 14.5, y: 0, z: 17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4197,7 +4199,7 @@ Transform:
   - {fileID: 2030568883}
   - {fileID: 1577245890}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &263302003
 MonoBehaviour:
@@ -11431,7 +11433,7 @@ RectTransform:
   m_Children:
   - {fileID: 630114855}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -13746,7 +13748,7 @@ Transform:
   m_Children:
   - {fileID: 832175857}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!95 &913281202
 Animator:
@@ -13758,7 +13760,7 @@ Animator:
   m_GameObject: {fileID: 913281199}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2e60d6b9d05b69441bfaed983c536608, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7bc6267a55fe5cc48abd70d973af75ee, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -13782,13 +13784,13 @@ MonoBehaviour:
   speed: 1
   wanderingSpeed: 2
   chasingSpeed: 3
-  fleeingSpeed: 2.5
+  fleeingSpeed: 1
   intersectionLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   _patrolPoints:
   - {fileID: 1223740492}
   - {fileID: 691622512}
@@ -13802,6 +13804,8 @@ MonoBehaviour:
   currentIndex: 0
   step: 0
   spawnPoint: {fileID: 394552326}
+  gateEntrance: {fileID: 1769204802}
+  gateIntersection: {fileID: 1537767438}
   original: {fileID: 2100000, guid: 97718cb9d9817c044af2f0b02eecc779, type: 2}
   frightened: {fileID: 2100000, guid: e42551728a1adbc46acba60d018675bc, type: 2}
 --- !u!54 &913281204
@@ -19269,7 +19273,7 @@ Transform:
   m_Children:
   - {fileID: 115708392}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &1351966125
 MonoBehaviour:
@@ -19286,13 +19290,13 @@ MonoBehaviour:
   speed: 1
   wanderingSpeed: 2
   chasingSpeed: 3
-  fleeingSpeed: 2.5
+  fleeingSpeed: 1
   intersectionLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   _patrolPoints:
   - {fileID: 50831268}
   - {fileID: 1979340621}
@@ -19302,6 +19306,8 @@ MonoBehaviour:
   currentIndex: 0
   step: 0
   spawnPoint: {fileID: 1480103726}
+  gateEntrance: {fileID: 1769204802}
+  gateIntersection: {fileID: 1537767438}
   original: {fileID: 2100000, guid: 0e23c36f495fbb246bfd2b4cd7f05bbc, type: 2}
   frightened: {fileID: 2100000, guid: e42551728a1adbc46acba60d018675bc, type: 2}
 --- !u!95 &1351966126
@@ -19314,7 +19320,7 @@ Animator:
   m_GameObject: {fileID: 1351966122}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 187c0588ade86cd40896c69c930fed97, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9a228530b2b880540af4b7b2afad630e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -21700,7 +21706,7 @@ Transform:
   m_Children:
   - {fileID: 227167477}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!95 &1473688004
 Animator:
@@ -21736,7 +21742,7 @@ MonoBehaviour:
   speed: 1
   wanderingSpeed: 2
   chasingSpeed: 3
-  fleeingSpeed: 2.5
+  fleeingSpeed: 1
   intersectionLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -21752,6 +21758,8 @@ MonoBehaviour:
   currentIndex: 0
   step: 0
   spawnPoint: {fileID: 207776795}
+  gateEntrance: {fileID: 1769204802}
+  gateIntersection: {fileID: 1537767438}
   original: {fileID: 2100000, guid: 10fdc11c1b70c7441bfa5b2d3334128c, type: 2}
   frightened: {fileID: 2100000, guid: e42551728a1adbc46acba60d018675bc, type: 2}
 --- !u!54 &1473688006
@@ -21910,7 +21918,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1480103725}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14, y: 0, z: 17}
+  m_LocalPosition: {x: 13.5, y: 0, z: 17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -25716,6 +25724,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 707977161}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1769204801
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1769204802}
+  m_Layer: 0
+  m_Name: GateEntrance
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1769204802
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769204801}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 14, y: 0, z: 20}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1769878693 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6361546807551290580, guid: b59beb189306b104d816132739ea0517,
@@ -26662,7 +26700,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1833497888
 GameObject:
