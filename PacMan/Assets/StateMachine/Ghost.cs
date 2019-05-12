@@ -66,23 +66,22 @@ public class Ghost : MonoBehaviour
     {
         _rigidbody.MovePosition(_transform.position + speed * Time.fixedDeltaTime * _transform.forward);
     }
-    /*public void Rotate(Vector3 direction)
+   
+    /// <summary>
+    /// Calculate the closest direction to the direction (vector) ghost -> target
+    /// </summary>
+    /// <param name="target"></param>
+    /// <returns></returns>
+    public Vector3[] GetDirection(Vector3 target)
     {
-        float angle = Vector3.SignedAngle(_transform.forward, direction, Vector3.up);
-        _transform.rotation = Quaternion.Euler(0f, angle + _transform.rotation.eulerAngles.y, 0f);
-
-    }*/
-
-    public Vector3 GetDirection(Vector3 target)
-    {
-        float angle = Mathf.Sign(target.z - _transform.position.z) * Mathf.Acos(Vector3.Dot(_transform.position, target) / (Vector3.SqrMagnitude(_transform.position) * Vector3.SqrMagnitude(target)));
+        float angle = Mathf.Sign(target.z - _transform.position.z) * Mathf.Acos(Vector3.Dot(_transform.forward, target - _transform.position) / (Vector3.SqrMagnitude(target-transform.position)));
         if (Mathf.Abs(Mathf.Sin(angle)) > Mathf.Abs(Mathf.Cos(angle)))
         {
-            return new Vector3(0f, 0f, Mathf.Sign(Mathf.Sin(angle)));
+            return new Vector3[2] { new Vector3(0f, 0f, Mathf.Sign(Mathf.Sin(angle))), new Vector3(Mathf.Sign(Mathf.Cos(angle)), 0f, 0f) };
         } 
         else
         {
-            return new Vector3(Mathf.Sign(Mathf.Cos(angle)), 0f, 0f);
+            return new Vector3[2] { new Vector3(Mathf.Sign(Mathf.Cos(angle)), 0f, 0f), new Vector3(0f, 0f, Mathf.Sign(Mathf.Sin(angle))) };
         }
     }
 
@@ -148,34 +147,34 @@ public class Ghost : MonoBehaviour
         }
     }
 
-    public Transform DecideNextIntersection(Vector3 direction)
+    public Transform DecideNextIntersection(Vector3[] directions)
     {
-        GetAllIntersectionsExceptBackward();      
+        GetAllIntersections();      
         RaycastHit hit;
-        if (Physics.Raycast(_transform.position, direction, out hit))
+        int i = 0;
+        while (i < directions.Length)
         {
-            if (hit.transform.CompareTag("Intersection"))
+            
+            if (Physics.Raycast(_transform.position, directions[i], out hit))
             {
-                return hit.transform;
-            }
-            else
-            {
-                int i = 0;
-                while (i < intersections.Length && intersections[i] == null)
+                if (hit.transform.CompareTag("Intersection"))
                 {
-                    i++;
+                    return hit.transform;
                 }
-                if (i == intersections.Length)
-                {
-                    Debug.Log("No intersection Found !");
-                    return null;
-                }
-                return intersections[i];
-
             }
+            i++;
         }
-        Debug.Log("No intersection Found !");
-        return null;
+        int j = 0;
+        while (j < intersections.Length && intersections[j] == null)
+        {
+            j++;
+        }
+        if (j == intersections.Length)
+        {
+            Debug.Log("No intersection Found !");
+            return null;
+        }
+        return intersections[j];
     }
 
     public void SetCurrentDirection(Transform intersection)
@@ -194,6 +193,6 @@ public class Ghost : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawLine(transform.position, transform.position + transform.right * 5);
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(_transform.position, transform.position - transform.right * 5);
+        Gizmos.DrawLine(transform.position, transform.position - transform.right * 5);
     }
 }

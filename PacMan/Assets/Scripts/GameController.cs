@@ -23,9 +23,5 @@ public class GameController : MonoBehaviour
         {
             // GG WP
         }
-        else
-        {
-            
-        }
     }
 }

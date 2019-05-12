@@ -43,8 +43,8 @@ public class WanderBehavior : StateMachineBehaviour
         {
             if(_ghost.transform.position == _ghost.targetIntersection.position)
             {
-                Vector3 direction = _ghost.GetDirection(_target);
-                Transform nextIntersection = _ghost.DecideNextIntersection(direction);
+                Vector3[] directions = _ghost.GetDirection(_target);
+                Transform nextIntersection = _ghost.DecideNextIntersection(directions);
                 if (nextIntersection == null)
                 {
                     Debug.Log("Error coudlnt find path");
