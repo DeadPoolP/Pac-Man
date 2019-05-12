@@ -7,10 +7,14 @@ public class WanderBehavior : StateMachineBehaviour
     private Vector3 _target;
     private Ghost _ghost;
     private bool _onPatrol;
+    private GameObject _player;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        _player = GameObject.FindGameObjectWithTag("Player");
         _ghost = animator.gameObject.GetComponent<Ghost>();
+        _ghost.speed = _ghost.wanderingSpeed;
         _ghost.ResetPatrol();
         _target = _ghost.GetCurrentPatrolPoint();
         _onPatrol = false;
@@ -19,12 +23,25 @@ public class WanderBehavior : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (_onPatrol){
+        if (_onPatrol)
+        {
             Patrol();
         }
-        else { GoToPatrol(); }
+        else
+        {
+            GoToPatrol();
+        }
+        if (_ghost.LookForPacMan())
+            _ghost.SetChasing(true);
+        if (_player.GetComponent<PlayerController>().godmode)
+        {
+            _ghost.SetFrightened(true);
+        }
     }
 
+    /// <summary>
+    /// Patrol sub state
+    /// </summary>
     public void Patrol()
     {
         if (_ghost.transform.position != _target)
@@ -37,11 +54,14 @@ public class WanderBehavior : StateMachineBehaviour
         }
     }
 
+    /// <summary>
+    /// Wander sub state with goal to go on patrol
+    /// </summary>
     public void GoToPatrol()
     {
-        if(_ghost.transform.position != _target)
+        if (_ghost.transform.position != _target)
         {
-            if(_ghost.transform.position == _ghost.targetIntersection.position)
+            if (_ghost.transform.position == _ghost.targetIntersection.position)
             {
                 Vector3[] directions = _ghost.GetDirection(_target);
                 Transform nextIntersection = _ghost.DecideNextIntersection(directions);
@@ -51,7 +71,6 @@ public class WanderBehavior : StateMachineBehaviour
                 }
                 else
                 {
-                    
                     _ghost.targetIntersection = nextIntersection;
                     _ghost.SetCurrentDirection(nextIntersection);
                 }

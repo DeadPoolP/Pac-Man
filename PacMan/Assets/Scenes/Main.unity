@@ -136,7 +136,7 @@ GameObject:
   m_Component:
   - component: {fileID: 12033403}
   - component: {fileID: 12033404}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WP7
   m_TagString: Intersection
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
@@ -165,7 +165,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12033402}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -180,7 +180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 19913850}
   - component: {fileID: 19913851}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WP5
   m_TagString: Intersection
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
@@ -209,7 +209,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19913849}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -328,7 +328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 41111037}
   - component: {fileID: 41111038}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (29)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -522,7 +522,7 @@ GameObject:
   m_Component:
   - component: {fileID: 50831268}
   - component: {fileID: 50831269}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WP1
   m_TagString: Intersection
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -551,7 +551,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 50831267}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -806,7 +806,7 @@ GameObject:
   m_Component:
   - component: {fileID: 61866369}
   - component: {fileID: 61866370}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WP1
   m_TagString: Intersection
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -835,7 +835,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61866368}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -850,7 +850,7 @@ GameObject:
   m_Component:
   - component: {fileID: 62361350}
   - component: {fileID: 62361351}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WP7
   m_TagString: Intersection
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -879,7 +879,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 62361349}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -968,7 +968,7 @@ GameObject:
   m_Component:
   - component: {fileID: 69972089}
   - component: {fileID: 69972090}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WP6
   m_TagString: Intersection
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -997,7 +997,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69972088}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -1314,7 +1314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 80364061}
   - component: {fileID: 80364062}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (22)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -1605,9 +1605,10 @@ GameObject:
   - component: {fileID: 115708392}
   - component: {fileID: 115708394}
   - component: {fileID: 115708393}
+  - component: {fileID: 115708395}
   m_Layer: 2
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1671,6 +1672,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115708391}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &115708395
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115708391}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &115764592 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6361546807551290580, guid: b59beb189306b104d816132739ea0517,
@@ -2201,7 +2215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 123596479}
   - component: {fileID: 123596480}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (18)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -2399,7 +2413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 162576875}
   - component: {fileID: 162576876}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (8)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -2454,19 +2468,19 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 170438943}
-  - component: {fileID: 170438942}
   - component: {fileID: 170438946}
   - component: {fileID: 170438945}
   - component: {fileID: 170438944}
+  - component: {fileID: 170438942}
   m_Layer: 2
-  m_Name: Yellow Ghost
+  m_Name: Orange Ghost
   m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!65 &170438942
-BoxCollider:
+  m_IsActive: 1
+--- !u!135 &170438942
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2476,7 +2490,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 7
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &170438943
 Transform:
@@ -2491,7 +2505,7 @@ Transform:
   m_Children:
   - {fileID: 1373160871}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &170438944
 MonoBehaviour:
@@ -2505,7 +2519,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6759bab0757f36d46b62f616fd12ab73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1
+  wanderingSpeed: 2
+  chasingSpeed: 3
+  fleeingSpeed: 2.5
+  intersectionLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
   _patrolPoints:
   - {fileID: 605909701}
   - {fileID: 492881256}
@@ -2517,9 +2540,8 @@ MonoBehaviour:
   - {fileID: 544322121}
   targetIntersection: {fileID: 2099079066}
   currentIndex: 0
-  wallDetectionRange: 0.5
   step: 0
-  currentDirection: {x: 0, y: 0, z: 0}
+  spawnPoint: {fileID: 1474325179}
 --- !u!95 &170438945
 Animator:
   serializedVersion: 3
@@ -3001,7 +3023,7 @@ GameObject:
   m_Component:
   - component: {fileID: 225214512}
   - component: {fileID: 225214513}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (32)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -3046,9 +3068,10 @@ GameObject:
   - component: {fileID: 227167477}
   - component: {fileID: 227167479}
   - component: {fileID: 227167478}
+  - component: {fileID: 227167480}
   m_Layer: 2
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3112,6 +3135,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227167476}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &227167480
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227167476}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &238450096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3661,7 +3697,7 @@ GameObject:
   - component: {fileID: 263302003}
   - component: {fileID: 263302005}
   - component: {fileID: 263302006}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3681,7 +3717,7 @@ Transform:
   m_Children:
   - {fileID: 2030568883}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &263302003
 MonoBehaviour:
@@ -3695,7 +3731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4f7276b7ca86fd4881efb080e78eba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 7
   wallDetectionRange: 0.8
 --- !u!54 &263302004
 Rigidbody:
@@ -3729,6 +3765,7 @@ MonoBehaviour:
   bigDotsEaten: 0
   health: 3
   godmode: 0
+  spawnPoint: {fileID: 363885111}
 --- !u!65 &263302006
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3832,7 +3869,7 @@ GameObject:
   m_Component:
   - component: {fileID: 272426906}
   - component: {fileID: 272426907}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (34)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -4351,7 +4388,7 @@ GameObject:
   - component: {fileID: 314241691}
   - component: {fileID: 314241693}
   - component: {fileID: 314241692}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Direction (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4599,7 +4636,7 @@ GameObject:
   m_Component:
   - component: {fileID: 347970743}
   - component: {fileID: 347970744}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (15)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -4633,6 +4670,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &363885110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 363885111}
+  m_Layer: 9
+  m_Name: Player SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &363885111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363885110}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 14, y: 0, z: 8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &367564177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5013,7 +5080,7 @@ GameObject:
   m_Component:
   - component: {fileID: 384204639}
   - component: {fileID: 384204640}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WP3
   m_TagString: Intersection
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -5042,7 +5109,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384204638}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -5401,7 +5468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 409068328}
   - component: {fileID: 409068329}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (11)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -5815,7 +5882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 458069636}
   - component: {fileID: 458069637}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WP4
   m_TagString: Intersection
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
@@ -5844,7 +5911,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458069635}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -6087,7 +6154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 478357340}
   - component: {fileID: 478357341}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (10)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -6143,7 +6210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 492881256}
   - component: {fileID: 492881257}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WP2
   m_TagString: Intersection
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -6172,7 +6239,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492881255}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -6421,7 +6488,7 @@ GameObject:
   m_Component:
   - component: {fileID: 511890710}
   - component: {fileID: 511890711}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WP8
   m_TagString: Intersection
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
@@ -6450,7 +6517,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511890709}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -6530,7 +6597,7 @@ GameObject:
   m_Component:
   - component: {fileID: 544322121}
   - component: {fileID: 544322122}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WP8
   m_TagString: Intersection
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -6559,7 +6626,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544322120}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -7054,7 +7121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 605909701}
   - component: {fileID: 605909702}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WP1
   m_TagString: Intersection
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -7083,7 +7150,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605909700}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -7554,7 +7621,7 @@ GameObject:
   m_Component:
   - component: {fileID: 620932185}
   - component: {fileID: 620932186}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (31)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -8169,7 +8236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 665168913}
   - component: {fileID: 665168914}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WP3
   m_TagString: Intersection
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
@@ -8198,7 +8265,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665168912}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -8521,7 +8588,7 @@ GameObject:
   m_Component:
   - component: {fileID: 691622512}
   - component: {fileID: 691622513}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WP2
   m_TagString: Intersection
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
@@ -8550,7 +8617,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691622511}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -9192,7 +9259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 721646169}
   - component: {fileID: 721646170}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WP5
   m_TagString: Intersection
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -9221,7 +9288,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721646168}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -9650,7 +9717,7 @@ RectTransform:
   m_Children:
   - {fileID: 630114855}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9679,7 +9746,7 @@ GameObject:
   m_Component:
   - component: {fileID: 757579387}
   - component: {fileID: 757579388}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (13)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -9728,7 +9795,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 770213977}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pink Patrol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10466,9 +10533,10 @@ GameObject:
   - component: {fileID: 832175857}
   - component: {fileID: 832175859}
   - component: {fileID: 832175858}
+  - component: {fileID: 832175860}
   m_Layer: 2
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10532,6 +10600,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832175856}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &832175860
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832175856}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &832859780
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10622,7 +10703,7 @@ GameObject:
   m_Component:
   - component: {fileID: 836949349}
   - component: {fileID: 836949350}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WP3
   m_TagString: Intersection
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -10651,7 +10732,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 836949348}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -10961,7 +11042,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 846760651}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Intersections
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11042,7 +11123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 849872794}
   - component: {fileID: 849872795}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (19)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -11160,7 +11241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 853676871}
   - component: {fileID: 853676872}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (21)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -11837,19 +11918,19 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 913281201}
-  - component: {fileID: 913281200}
   - component: {fileID: 913281204}
   - component: {fileID: 913281202}
   - component: {fileID: 913281203}
+  - component: {fileID: 913281200}
   m_Layer: 2
   m_Name: Blue Ghost
   m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!65 &913281200
-BoxCollider:
+  m_IsActive: 1
+--- !u!135 &913281200
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -11859,7 +11940,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 7
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &913281201
 Transform:
@@ -11874,7 +11955,7 @@ Transform:
   m_Children:
   - {fileID: 832175857}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!95 &913281202
 Animator:
@@ -11907,7 +11988,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6759bab0757f36d46b62f616fd12ab73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1
+  wanderingSpeed: 2
+  chasingSpeed: 3
+  fleeingSpeed: 2.5
+  intersectionLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
   _patrolPoints:
   - {fileID: 1223740492}
   - {fileID: 691622512}
@@ -11919,9 +12009,8 @@ MonoBehaviour:
   - {fileID: 511890710}
   targetIntersection: {fileID: 757579387}
   currentIndex: 0
-  wallDetectionRange: 0.5
   step: 0
-  currentDirection: {x: 0, y: 0, z: 0}
+  spawnPoint: {fileID: 394552326}
 --- !u!54 &913281204
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11954,7 +12043,7 @@ GameObject:
   m_Component:
   - component: {fileID: 914159841}
   - component: {fileID: 914159842}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WP4
   m_TagString: Intersection
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -11983,7 +12072,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914159840}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -11998,7 +12087,7 @@ GameObject:
   m_Component:
   - component: {fileID: 925719563}
   - component: {fileID: 925719564}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -12362,7 +12451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 953515361}
   - component: {fileID: 953515362}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WP2
   m_TagString: Intersection
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -12391,7 +12480,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 953515360}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -12581,7 +12670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 966982304}
   - component: {fileID: 966982305}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (23)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -12625,7 +12714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 967669376}
   - component: {fileID: 967669377}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WP4
   m_TagString: Intersection
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -12654,7 +12743,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967669375}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -13611,7 +13700,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1061002255}
   - component: {fileID: 1061002256}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (7)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -13655,7 +13744,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1063144541}
   - component: {fileID: 1063144542}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (38)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -13779,7 +13868,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1074831986}
   - component: {fileID: 1074831987}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (36)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -14737,7 +14826,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1172816349}
   - component: {fileID: 1172816350}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (24)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -15231,7 +15320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1223740492}
   - component: {fileID: 1223740493}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WP1
   m_TagString: Intersection
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
@@ -15260,7 +15349,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223740491}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -15299,7 +15388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1244202564}
   - component: {fileID: 1244202565}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WP3
   m_TagString: Intersection
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -15328,7 +15417,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244202563}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -15589,7 +15678,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1268168916}
   - component: {fileID: 1268168917}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (4)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -15633,7 +15722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1270486027}
   - component: {fileID: 1270486028}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (39)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -15750,7 +15839,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1276943553}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Red Patrol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15939,7 +16028,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1301429837}
   - component: {fileID: 1301429838}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (26)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -16229,7 +16318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1326901476}
   - component: {fileID: 1326901477}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (28)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -16660,19 +16749,19 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1351966124}
-  - component: {fileID: 1351966123}
   - component: {fileID: 1351966127}
   - component: {fileID: 1351966126}
   - component: {fileID: 1351966125}
+  - component: {fileID: 1351966123}
   m_Layer: 2
   m_Name: Pink Ghost
   m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!65 &1351966123
-BoxCollider:
+  m_IsActive: 1
+--- !u!135 &1351966123
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -16682,7 +16771,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 7
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1351966124
 Transform:
@@ -16697,7 +16786,7 @@ Transform:
   m_Children:
   - {fileID: 115708392}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &1351966125
 MonoBehaviour:
@@ -16711,7 +16800,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6759bab0757f36d46b62f616fd12ab73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1
+  wanderingSpeed: 2
+  chasingSpeed: 3
+  fleeingSpeed: 2.5
+  intersectionLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
   _patrolPoints:
   - {fileID: 50831268}
   - {fileID: 1979340621}
@@ -16719,9 +16817,8 @@ MonoBehaviour:
   - {fileID: 914159841}
   targetIntersection: {fileID: 2099079066}
   currentIndex: 0
-  wallDetectionRange: 0.5
   step: 0
-  currentDirection: {x: 0, y: 0, z: 0}
+  spawnPoint: {fileID: 1480103726}
 --- !u!95 &1351966126
 Animator:
   serializedVersion: 3
@@ -16779,7 +16876,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1367797052}
   - component: {fileID: 1367797053}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (35)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -16898,9 +16995,10 @@ GameObject:
   - component: {fileID: 1373160871}
   - component: {fileID: 1373160873}
   - component: {fileID: 1373160872}
+  - component: {fileID: 1373160874}
   m_Layer: 2
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16964,6 +17062,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1373160870}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1373160874
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373160870}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1373316678 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6361546807551290580, guid: b59beb189306b104d816132739ea0517,
@@ -17294,7 +17405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1413745901}
   - component: {fileID: 1413745902}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (16)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -17633,7 +17744,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1423813059}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Blue Patrol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17763,7 +17874,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1442280482}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orange Patrol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18703,10 +18814,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1473688003}
-  - component: {fileID: 1473688002}
   - component: {fileID: 1473688006}
   - component: {fileID: 1473688004}
   - component: {fileID: 1473688005}
+  - component: {fileID: 1473688002}
   m_Layer: 2
   m_Name: Red Ghost
   m_TagString: Ghost
@@ -18714,8 +18825,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &1473688002
-BoxCollider:
+--- !u!135 &1473688002
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -18725,7 +18836,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 7
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1473688003
 Transform:
@@ -18740,7 +18851,7 @@ Transform:
   m_Children:
   - {fileID: 227167477}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!95 &1473688004
 Animator:
@@ -18773,7 +18884,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6759bab0757f36d46b62f616fd12ab73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1
+  wanderingSpeed: 2
+  chasingSpeed: 3
+  fleeingSpeed: 2.5
+  intersectionLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
   _patrolPoints:
   - {fileID: 61866369}
   - {fileID: 953515361}
@@ -18781,9 +18901,8 @@ MonoBehaviour:
   - {fileID: 967669376}
   targetIntersection: {fileID: 1537767438}
   currentIndex: 0
-  wallDetectionRange: 0.5
   step: 0
-  currentDirection: {x: 0, y: 0, z: 0}
+  spawnPoint: {fileID: 207776795}
 --- !u!54 &1473688006
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19510,7 +19629,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1537767438}
   - component: {fileID: 1537767439}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (5)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -19984,7 +20103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1596283215}
   - component: {fileID: 1596283216}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (20)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -20632,7 +20751,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1637591117}
   - component: {fileID: 1637591118}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (6)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -20683,7 +20802,7 @@ GameObject:
   - component: {fileID: 1642723415}
   - component: {fileID: 1642723418}
   - component: {fileID: 1642723417}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Direction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21283,7 +21402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1674285407}
   - component: {fileID: 1674285408}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (12)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -21437,7 +21556,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1726869000}
   - component: {fileID: 1726869001}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (1)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -21721,7 +21840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1762094038}
   - component: {fileID: 1762094039}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WP6
   m_TagString: Intersection
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
@@ -21750,7 +21869,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1762094037}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -21845,7 +21964,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1765619311}
   - component: {fileID: 1765619312}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (3)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -22301,7 +22420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1807070667}
   - component: {fileID: 1807070668}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (9)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -22351,7 +22470,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1807499347}
   - component: {fileID: 1807499348}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (30)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -22677,7 +22796,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1835439575 stripped
 Transform:
@@ -22861,7 +22980,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1877449851}
   - component: {fileID: 1877449852}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (37)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -23139,7 +23258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1892044621}
   - component: {fileID: 1892044622}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (25)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -23397,7 +23516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1979340621}
   - component: {fileID: 1979340622}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WP2
   m_TagString: Intersection
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -23426,7 +23545,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979340620}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -23441,7 +23560,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1983134947}
   - component: {fileID: 1983134948}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WP4
   m_TagString: Intersection
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -23470,7 +23589,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1983134946}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -23515,7 +23634,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2000481941}
   - component: {fileID: 2000481942}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (17)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -23874,7 +23993,7 @@ GameObject:
   - component: {fileID: 2030568883}
   - component: {fileID: 2030568886}
   - component: {fileID: 2030568885}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23952,7 +24071,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2034321956}
   - component: {fileID: 2034321957}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (33)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -24701,7 +24820,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2099079066}
   - component: {fileID: 2099079067}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (14)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -24825,7 +24944,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2109209104}
   - component: {fileID: 2109209105}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (2)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -25405,7 +25524,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2133189648}
   - component: {fileID: 2133189649}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: I (27)
   m_TagString: Intersection
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}

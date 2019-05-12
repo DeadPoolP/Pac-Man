@@ -9,6 +9,7 @@ TagManager:
   - BigDot
   - Intersection
   - Ghost
+  - Death
   layers:
   - Default
   - TransparentFX
@@ -18,8 +19,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Intersection
+  - Player
   - 
   - 
   - 

@@ -6,44 +6,71 @@ public class Ghost : MonoBehaviour
 {
 
     public float speed = 3;
+    public float wanderingSpeed = 3;
+    public float chasingSpeed = 4;
+    public float fleeingSpeed = 2;
+    public LayerMask intersectionLayer;
+    public LayerMask playerLayer;
     private Rigidbody _rigidbody;
     private Transform _transform;
     [SerializeField]
     private Transform[] _patrolPoints;
-    private Transform[] intersections;
+    private Transform[] _intersections;
     public Transform targetIntersection;
     [SerializeField]
     private int currentIndex = 0;
     [SerializeField]
-    private float wallDetectionRange = 0.5f;
-    [SerializeField]
     private float step;
+    [SerializeField]
+    private Transform spawnPoint;
+    private Animator _animator;
 
-    public Vector3 currentDirection;
+    private Vector3 currentDirection;
 
-    private void Awake()
+    void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _transform = GetComponent<Transform>();
+        intersectionLayer = LayerMask.NameToLayer("Intersection");
+        playerLayer = LayerMask.NameToLayer("Player");
+        _animator = GetComponent<Animator>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        intersections = new Transform[4];
+        _intersections = new Transform[4];
         GetAllIntersections();
         currentDirection = _transform.forward;
+        ResetAnimator();
+        ResetPatrol();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Die()
     {
-
+        _transform.position = spawnPoint.position;
     }
 
     public void ResetPatrol()
     {
         currentIndex = 0;
+    }
+
+    public void ResetAnimator()
+    {
+        SetChasing(false);
+        SetFrightened(false);
+        _animator.Play("Wander");
+    }
+
+    public void SetChasing(bool b)
+    {
+        _animator.SetBool("Chasing", b);
+    }
+
+    public void SetFrightened(bool b)
+    {
+        _animator.SetBool("Frightened", b);
     }
 
     public Vector3 GetCurrentPatrolPoint()
@@ -62,11 +89,7 @@ public class Ghost : MonoBehaviour
         step = speed * Time.fixedDeltaTime;
         _transform.position = Vector3.MoveTowards(_transform.position, target, step);
     }
-    public void NonStopMove()
-    {
-        _rigidbody.MovePosition(_transform.position + speed * Time.fixedDeltaTime * _transform.forward);
-    }
-   
+
     /// <summary>
     /// Calculate the closest direction to the direction (vector) ghost -> target
     /// </summary>
@@ -74,27 +97,25 @@ public class Ghost : MonoBehaviour
     /// <returns></returns>
     public Vector3[] GetDirection(Vector3 target)
     {
-        float angle = Mathf.Sign(target.z - _transform.position.z) * Mathf.Acos(Vector3.Dot(_transform.forward, target - _transform.position) / (Vector3.SqrMagnitude(target-transform.position)));
+        float dot = Vector3.Dot(_transform.forward, target - _transform.position) / (Vector3.Magnitude(target - transform.position));
+        float angle = Mathf.Acos(dot);
+        if (target.z - _transform.position.z < 0)
+        {
+            angle *= -1;
+        }
         if (Mathf.Abs(Mathf.Sin(angle)) > Mathf.Abs(Mathf.Cos(angle)))
         {
             return new Vector3[2] { new Vector3(0f, 0f, Mathf.Sign(Mathf.Sin(angle))), new Vector3(Mathf.Sign(Mathf.Cos(angle)), 0f, 0f) };
-        } 
+        }
         else
         {
             return new Vector3[2] { new Vector3(Mathf.Sign(Mathf.Cos(angle)), 0f, 0f), new Vector3(0f, 0f, Mathf.Sign(Mathf.Sin(angle))) };
         }
     }
 
-    public bool CheckDirection(Vector3 direction)
-    {
-        RaycastHit hit;
-        if (Physics.Raycast(_transform.position, direction, out hit, wallDetectionRange))
-        {
-            return !(hit.transform.CompareTag("Wall"));
-        }
-        return true;
-    }
-
+    /// <summary>
+    /// Stores all the next intersections visible by the Ghost
+    /// </summary>
     public void GetAllIntersections()
     {
         RaycastHit hit;
@@ -102,62 +123,62 @@ public class Ghost : MonoBehaviour
         Vector3[] directions = { _transform.forward, _transform.right, -_transform.right, -_transform.forward };
         foreach (var direction in directions)
         {
-            if (Physics.Raycast(_transform.position, direction, out hit))
+            if (Physics.Raycast(_transform.position, direction, out hit, intersectionLayer))
             {
                 if (hit.transform.CompareTag("Intersection"))
                 {
-                    intersections[i] = hit.transform;
+                    _intersections[i] = hit.transform;
                 }
                 else
                 {
-                    intersections[i] = null;
+                    _intersections[i] = null;
                 }
                 i++;
             }
         }
     }
 
-    public void GetAllIntersectionsExceptBackward()
+    /// <summary>
+    /// Looks in all direction for PacMan
+    /// </summary>
+    /// <returns>True if pacman is detected, false otherwise</returns>
+    public bool LookForPacMan()
     {
         RaycastHit hit;
         int i = 0;
-        Vector3[] directions = { _transform.forward, -_transform.right, _transform.right, -_transform.forward };
+        Vector3[] directions = { _transform.forward, _transform.right, -_transform.right, -_transform.forward };
         foreach (var direction in directions)
         {
-            if(direction == -currentDirection)
+            if (Physics.Raycast(_transform.position, direction, out hit, playerLayer))
             {
-                intersections[i] = null;
-            }
-            else
-            {
-                if (Physics.Raycast(_transform.position, direction, out hit))
+                if (hit.transform.CompareTag("Player"))
                 {
-                    if (hit.transform.CompareTag("Intersection"))
-                    {
-                        intersections[i] = hit.transform;
-                    }
-                    else
-                    {
-                        intersections[i] = null;
-                    }
-                    i++;
+                    return true;
                 }
+                i++;
             }
-            
         }
+        return false;
     }
 
+    /// <summary>
+    /// Given the 2 priority directions, decides what direction to go and returns the next intersection
+    /// </summary>
+    /// <param name="directions"></param>
+    /// <returns></returns>
     public Transform DecideNextIntersection(Vector3[] directions)
     {
-        GetAllIntersections();      
+        GetAllIntersections();
         RaycastHit hit;
         int i = 0;
         while (i < directions.Length)
         {
-            
-            if (Physics.Raycast(_transform.position, directions[i], out hit))
+            if (Physics.Raycast(_transform.position, directions[i], out hit, intersectionLayer))
             {
-                if (hit.transform.CompareTag("Intersection"))
+                Vector3 intent = directions[i];
+                Vector3 temp = intent + currentDirection;
+                bool backward = !(Vector3.Magnitude(temp) < 0.1f);
+                if (hit.transform.CompareTag("Intersection") && backward) // Dont go backward
                 {
                     return hit.transform;
                 }
@@ -165,18 +186,23 @@ public class Ghost : MonoBehaviour
             i++;
         }
         int j = 0;
-        while (j < intersections.Length && intersections[j] == null)
+        while (j < _intersections.Length && _intersections[j] == null)
         {
             j++;
         }
-        if (j == intersections.Length)
+        if (j == _intersections.Length)
         {
             Debug.Log("No intersection Found !");
             return null;
         }
-        return intersections[j];
+        return _intersections[j];
     }
 
+
+    /// <summary>
+    /// Stores the current direction the Ghost is going
+    /// </summary>
+    /// <param name="intersection"></param>
     public void SetCurrentDirection(Transform intersection)
     {
         currentDirection = Vector3.Normalize(intersection.position - _transform.position);
@@ -185,7 +211,7 @@ public class Ghost : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
-        
+
         Gizmos.color = Color.white;
         Gizmos.DrawLine(transform.position, transform.position + transform.forward * 5);
         Gizmos.color = Color.black;
@@ -194,5 +220,14 @@ public class Ghost : MonoBehaviour
         Gizmos.DrawLine(transform.position, transform.position + transform.right * 5);
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, transform.position - transform.right * 5);
+    }
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            SetChasing(false);
+        }
     }
 }
