@@ -84,7 +84,7 @@ public class PlayerMotor : MonoBehaviour
     {
             
             Gizmos.color = Color.red;
-            Gizmos.DrawLine(_transform.position, _transform.position + _transform.forward * wallDetectionRange);
+            Gizmos.DrawLine(transform.position, transform.position + transform.forward * wallDetectionRange);
         
     }
 }

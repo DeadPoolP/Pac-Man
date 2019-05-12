@@ -14,6 +14,10 @@ public class PlayerController : MonoBehaviour
 
     private PlayerMotor _playerMotor;
 
+    [SerializeField]
+    private Transform spawnPoint;
+
+
     private Vector3 _up = new Vector3(0f, 0f, 1f);
     private Vector3 _down = new Vector3(0f, 0f, -1f);
     private Vector3 _right = new Vector3(1f, 0f, 0f);
@@ -66,6 +70,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void Die()
+    {
+        health--;
+    }
+
+    private void Kill(Ghost ghost)
+    {
+        ghost.Die();
+    }
+
+    private void Respawn()
+    {
+        transform.position = spawnPoint.position;
+        transform.rotation = spawnPoint.rotation;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other != null)
@@ -81,6 +101,19 @@ public class PlayerController : MonoBehaviour
                 bigDotsEaten++;
                 godmode = true;
                 godmodeTimer = godmodeTime;
+            }
+
+            if (other.gameObject.CompareTag("Death"))
+            {
+                if (godmode)
+                {
+                    Kill(other.gameObject.GetComponentInParent<Ghost>());
+                }
+                else
+                {
+                    Die();
+                    Respawn();
+                }
             }
         }
     }    
