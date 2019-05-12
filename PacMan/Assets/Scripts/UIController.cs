@@ -10,29 +10,50 @@ public class UIController : MonoBehaviour
     private Text scoreValue;
     [SerializeField]
     private List<GameObject> hps;
-    private GameController _gameController;
+    [SerializeField]
+    private GameObject gameOverPanel;
 
-    private void Awake()
-    {
-        _gameController = GetComponent<GameController>();
-    }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        ResetUI();
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoreValue.text = _gameController._player.dotsEaten.ToString();
-        for (int i = 0; i < hps.Count; i++)
-        {
-            hps[i].SetActive(_gameController._player.health > i);
-        }
+       
 
     }
 
+    public void UpdateScore(int score)
+    {
+        scoreValue.text = score.ToString();
+
+    }
+
+    public void UpdateLives(int health)
+    {
+        for (int i = 0; i < hps.Count; i++)
+        {
+            hps[i].SetActive(health > i);
+        }
+    }
+
+    public void DisplayGameOverPanel()
+    {
+        gameOverPanel.SetActive(true);
+    }
+
+    public void ResetUI()
+    {
+        foreach (var hp in hps)
+        {
+            hp.SetActive(true);
+        }
+        gameOverPanel.SetActive(false);
+        scoreValue.text = "00";
+    }
 
 }

@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public int dotsEaten = 0;
     public int bigDotsEaten = 0;
+    public int killCount = 0;
     public int health = 3;
     public bool godmode = false;
     [SerializeField]
@@ -79,6 +80,7 @@ public class PlayerController : MonoBehaviour
 
     private void Kill(Ghost ghost)
     {
+        killCount++;
         ghost.Die();
     }
 
