@@ -39,8 +39,6 @@ public class Ghost : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody>();
         _transform = GetComponent<Transform>();
-        intersectionLayer = LayerMask.NameToLayer("Intersection");
-        playerLayer = LayerMask.NameToLayer("Player");
         _animator = GetComponent<Animator>();
         SwapMaterial(original);
     }
@@ -149,7 +147,7 @@ public class Ghost : MonoBehaviour
         Vector3[] directions = { _transform.forward, _transform.right, -_transform.right, -_transform.forward };
         foreach (var direction in directions)
         {
-            if (Physics.Raycast(_transform.position, direction, out hit, intersectionLayer))
+            if (Physics.Raycast(_transform.position, direction, out hit, Mathf.Infinity, intersectionLayer))
             {
                 if (hit.transform.CompareTag("Intersection"))
                 {
@@ -175,7 +173,7 @@ public class Ghost : MonoBehaviour
         Vector3[] directions = { _transform.forward, _transform.right, -_transform.right, -_transform.forward };
         foreach (var direction in directions)
         {
-            if (Physics.Raycast(_transform.position, direction, out hit, playerLayer))
+            if (Physics.Raycast(_transform.position, direction, out hit, Mathf.Infinity, playerLayer))
             {
                 if (hit.transform.CompareTag("Player"))
                 {
@@ -199,7 +197,7 @@ public class Ghost : MonoBehaviour
         int i = 0;
         while (i < directions.Length)
         {
-            if (Physics.Raycast(_transform.position, directions[i], out hit, intersectionLayer))
+            if (Physics.Raycast(_transform.position, directions[i], out hit, Mathf.Infinity, intersectionLayer))
             {
                 Vector3 intent = directions[i];
                 Vector3 temp = intent + currentDirection;
