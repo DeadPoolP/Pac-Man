@@ -14,6 +14,7 @@ public class WanderBehavior : StateMachineBehaviour
     {
         _player = GameObject.FindGameObjectWithTag("Player");
         _ghost = animator.gameObject.GetComponent<Ghost>();
+        _ghost.SwapMaterial(_ghost.original);
         _ghost.speed = _ghost.wanderingSpeed;
         _ghost.ResetPatrol();
         _target = _ghost.GetCurrentPatrolPoint();

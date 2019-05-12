@@ -13,6 +13,7 @@ public class ChaseBehavior : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _ghost = animator.gameObject.GetComponent<Ghost>();
+        _ghost.SwapMaterial(_ghost.original);
         _target = GameObject.FindGameObjectWithTag("Player");
         _ghost.speed = _ghost.chasingSpeed;
     }

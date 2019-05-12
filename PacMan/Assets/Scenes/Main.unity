@@ -2942,6 +2942,8 @@ MonoBehaviour:
   currentIndex: 0
   step: 0
   spawnPoint: {fileID: 1474325179}
+  original: {fileID: 2100000, guid: 68be5b8b0f5c3504185cebcc237586d2, type: 2}
+  frightened: {fileID: 2100000, guid: e42551728a1adbc46acba60d018675bc, type: 2}
 --- !u!95 &170438945
 Animator:
   serializedVersion: 3
@@ -13800,6 +13802,8 @@ MonoBehaviour:
   currentIndex: 0
   step: 0
   spawnPoint: {fileID: 394552326}
+  original: {fileID: 2100000, guid: 97718cb9d9817c044af2f0b02eecc779, type: 2}
+  frightened: {fileID: 2100000, guid: e42551728a1adbc46acba60d018675bc, type: 2}
 --- !u!54 &913281204
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19298,6 +19302,8 @@ MonoBehaviour:
   currentIndex: 0
   step: 0
   spawnPoint: {fileID: 1480103726}
+  original: {fileID: 2100000, guid: 0e23c36f495fbb246bfd2b4cd7f05bbc, type: 2}
+  frightened: {fileID: 2100000, guid: e42551728a1adbc46acba60d018675bc, type: 2}
 --- !u!95 &1351966126
 Animator:
   serializedVersion: 3
@@ -21733,10 +21739,10 @@ MonoBehaviour:
   fleeingSpeed: 2.5
   intersectionLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   _patrolPoints:
   - {fileID: 61866369}
   - {fileID: 953515361}
@@ -21746,6 +21752,8 @@ MonoBehaviour:
   currentIndex: 0
   step: 0
   spawnPoint: {fileID: 207776795}
+  original: {fileID: 2100000, guid: 10fdc11c1b70c7441bfa5b2d3334128c, type: 2}
+  frightened: {fileID: 2100000, guid: e42551728a1adbc46acba60d018675bc, type: 2}
 --- !u!54 &1473688006
 Rigidbody:
   m_ObjectHideFlags: 0

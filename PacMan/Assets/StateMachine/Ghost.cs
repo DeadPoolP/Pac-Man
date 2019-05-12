@@ -25,6 +25,11 @@ public class Ghost : MonoBehaviour
     private Transform spawnPoint;
     private Animator _animator;
 
+
+    public Material original;
+    public Material frightened;
+
+
     private Vector3 currentDirection;
 
     void Awake()
@@ -34,6 +39,7 @@ public class Ghost : MonoBehaviour
         intersectionLayer = LayerMask.NameToLayer("Intersection");
         playerLayer = LayerMask.NameToLayer("Player");
         _animator = GetComponent<Animator>();
+        SwapMaterial(original);
     }
 
     // Start is called before the first frame update
@@ -54,6 +60,11 @@ public class Ghost : MonoBehaviour
     public void ResetPatrol()
     {
         currentIndex = 0;
+    }
+
+    public void SwapMaterial(Material mat)
+    {
+        GetComponentInChildren<MeshRenderer>().material = mat;
     }
 
     public void ResetAnimator()
