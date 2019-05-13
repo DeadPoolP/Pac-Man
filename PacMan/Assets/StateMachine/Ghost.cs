@@ -54,6 +54,12 @@ public class Ghost : MonoBehaviour
         ResetPatrol();
     }
 
+    private void FixedUpdate()
+    {
+        if (LookForPacMan())
+            SetChasing(true);
+    }
+
     public void Die()
     {
         _transform.position = spawnPoint.position;
@@ -97,15 +103,15 @@ public class Ghost : MonoBehaviour
         _animator.SetBool("Dead", b);
     }
 
-    public Vector3 GetCurrentPatrolPoint()
+    public Transform GetCurrentPatrolPoint()
     {
-        return _patrolPoints[currentIndex].position;
+        return _patrolPoints[currentIndex];
     }
 
-    public Vector3 GetNextPatrolPoint()
+    public Transform GetNextPatrolPoint()
     {
         currentIndex = (currentIndex + 1) % _patrolPoints.Length;
-        return _patrolPoints[currentIndex].position;
+        return _patrolPoints[currentIndex];
     }
 
     public void MoveToTarget(Vector3 target)
@@ -122,7 +128,8 @@ public class Ghost : MonoBehaviour
     public Vector3[] GetDirection(Vector3 target)
     {
         float dot = Vector3.Dot(_transform.forward, target - _transform.position) / (Vector3.Magnitude(target - transform.position));
-        float angle = Mathf.Acos(dot);
+        float angle = Mathf.Acos(Mathf.Clamp(dot,-1f,1f));
+        
         if (target.z - _transform.position.z < 0)
         {
             angle *= -1;
@@ -144,7 +151,7 @@ public class Ghost : MonoBehaviour
     {
         RaycastHit hit;
         int i = 0;
-        Vector3[] directions = { _transform.forward, _transform.right, -_transform.right, -_transform.forward };
+        Vector3[] directions = { -_transform.right, -_transform.forward, _transform.right, _transform.forward };
         foreach (var direction in directions)
         {
             if (Physics.Raycast(_transform.position, direction, out hit, Mathf.Infinity, intersectionLayer))
@@ -170,10 +177,10 @@ public class Ghost : MonoBehaviour
     {
         RaycastHit hit;
         int i = 0;
-        Vector3[] directions = { _transform.forward, _transform.right, -_transform.right, -_transform.forward };
+        Vector3[] directions = { -_transform.right, -_transform.forward, _transform.right, _transform.forward };
         foreach (var direction in directions)
         {
-            if (Physics.Raycast(_transform.position, direction, out hit, Mathf.Infinity, playerLayer))
+            if (Physics.Raycast(_transform.position, direction, out hit, 7f, playerLayer))
             {
                 if (hit.transform.CompareTag("Player"))
                 {
@@ -190,36 +197,49 @@ public class Ghost : MonoBehaviour
     /// </summary>
     /// <param name="directions"></param>
     /// <returns></returns>
-    public Transform DecideNextIntersection(Vector3[] directions)
+    public Transform DecideNextIntersection(Vector3[] directions, bool allowBackwardMove)
     {
         GetAllIntersections();
         RaycastHit hit;
         int i = 0;
+
         while (i < directions.Length)
         {
             if (Physics.Raycast(_transform.position, directions[i], out hit, Mathf.Infinity, intersectionLayer))
             {
-                Vector3 intent = directions[i];
-                Vector3 temp = intent + currentDirection;
-                bool backward = !(Vector3.Magnitude(temp) < 0.1f);
-                if (hit.transform.CompareTag("Intersection") && backward) // Dont go backward
+                if (!allowBackwardMove)
                 {
-                    return hit.transform;
+                    Vector3 intent = directions[i];
+                    Vector3 temp = intent + currentDirection;
+                    bool backward = !(Vector3.Magnitude(temp) < 0.1f);
+                    if (hit.transform.CompareTag("Intersection") && backward) // Dont go backward
+                    {
+                        return hit.transform;
+                    }
                 }
+                else
+                {
+                    if (hit.transform.CompareTag("Intersection"))
+                    {
+                        return hit.transform;
+                    }
+                }
+
             }
             i++;
         }
         int j = 0;
-        while (j < _intersections.Length && _intersections[j] == null)
+        List<int> indexes = new List<int>();
+        while (j < _intersections.Length)
         {
+            if (_intersections[j] != null)
+            {
+                indexes.Add(j);
+            }
             j++;
         }
-        if (j == _intersections.Length)
-        {
-            Debug.Log("No intersection Found !");
-            return null;
-        }
-        return _intersections[j];
+        int randomIndex = Random.Range(1, indexes.Count+1) - 1;
+        return _intersections[indexes[randomIndex]];
     }
 
 

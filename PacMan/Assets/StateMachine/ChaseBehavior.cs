@@ -5,28 +5,34 @@ using UnityEngine;
 public class ChaseBehavior : StateMachineBehaviour
 {
 
-    private GameObject _target;
+    private GameObject _player;
+    private Vector3 _target;
     private Ghost _ghost;
 
-
+    
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _ghost = animator.gameObject.GetComponent<Ghost>();
         _ghost.SwapMaterial(_ghost.original);
-        _target = GameObject.FindGameObjectWithTag("Player");
+        _player = GameObject.FindGameObjectWithTag("Player");
         _ghost.speed = _ghost.chasingSpeed;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (_ghost.transform.position != _target.transform.position)
+        _target = _player.transform.position;
+        if (_ghost.name == "Pink Ghost")
+            _target = _player.transform.position + _player.transform.forward * 4;
+        if (_ghost.name == "Blue Ghost")
+            _target = _player.transform.position + _player.transform.right * 4;
+        if (_ghost.transform.position != _target)
         {
             if (_ghost.transform.position == _ghost.targetIntersection.position)
             {
-                Vector3[] directions = _ghost.GetDirection(_target.transform.position);
-                Transform nextIntersection = _ghost.DecideNextIntersection(directions);
+                Vector3[] directions = _ghost.GetDirection(_target);
+                Transform nextIntersection = _ghost.DecideNextIntersection(directions,true);
                 if (nextIntersection == null)
                 {
                     Debug.Log("Error coudlnt find path");
@@ -42,7 +48,7 @@ public class ChaseBehavior : StateMachineBehaviour
                 _ghost.MoveToTarget(_ghost.targetIntersection.position);
             }
         }
-        if (_target.GetComponent<PlayerController>().godmode)
+        if (_player.GetComponent<PlayerController>().godmode)
             _ghost.SetFrightened(true);
     }
 
