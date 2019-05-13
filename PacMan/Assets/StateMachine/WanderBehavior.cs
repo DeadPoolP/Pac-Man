@@ -17,7 +17,7 @@ public class WanderBehavior : StateMachineBehaviour
         _ghost.SwapMaterial(_ghost.original);
         _ghost.speed = _ghost.wanderingSpeed;
         _ghost.ResetPatrol();
-        _target = _ghost.GetCurrentPatrolPoint();
+        _target = _ghost.GetCurrentPatrolPoint().position;
         _onPatrol = false;
         _ghost.SetReady(false);
     }
@@ -25,6 +25,7 @@ public class WanderBehavior : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        
         if (_onPatrol)
         {
             Patrol();
@@ -33,12 +34,8 @@ public class WanderBehavior : StateMachineBehaviour
         {
             GoToPatrol();
         }
-        if (_ghost.LookForPacMan())
-            _ghost.SetChasing(true);
         if (_player.GetComponent<PlayerController>().godmode)
-        {
             _ghost.SetFrightened(true);
-        }
     }
 
     /// <summary>
@@ -52,7 +49,9 @@ public class WanderBehavior : StateMachineBehaviour
         }
         else
         {
-            _target = _ghost.GetNextPatrolPoint();
+            _target = _ghost.GetNextPatrolPoint().position;
+            _ghost.targetIntersection = _ghost.GetCurrentPatrolPoint();
+
         }
     }
 
@@ -66,10 +65,10 @@ public class WanderBehavior : StateMachineBehaviour
             if (_ghost.transform.position == _ghost.targetIntersection.position)
             {
                 Vector3[] directions = _ghost.GetDirection(_target);
-                Transform nextIntersection = _ghost.DecideNextIntersection(directions);
+                Transform nextIntersection = _ghost.DecideNextIntersection(directions,false);
                 if (nextIntersection == null)
                 {
-                    Debug.Log("Error coudlnt find path");
+                    Debug.Log("Error couldnt find path");
                 }
                 else
                 {

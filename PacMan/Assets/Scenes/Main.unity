@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 12033403}
   - component: {fileID: 12033404}
   m_Layer: 8
-  m_Name: WP7
+  m_Name: WP8
   m_TagString: Intersection
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -155,7 +155,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1423813059}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &12033404
 BoxCollider:
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 19913850}
   - component: {fileID: 19913851}
   m_Layer: 8
-  m_Name: WP5
+  m_Name: WP6
   m_TagString: Intersection
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -199,7 +199,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1423813059}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &19913851
 BoxCollider:
@@ -347,7 +347,7 @@ Transform:
   m_LocalScale: {x: 0.35714278, y: 1, z: 0.27855155}
   m_Children: []
   m_Father: {fileID: 846760651}
-  m_RootOrder: 33
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &41111038
 BoxCollider:
@@ -863,7 +863,7 @@ GameObject:
   - component: {fileID: 62361350}
   - component: {fileID: 62361351}
   m_Layer: 8
-  m_Name: WP7
+  m_Name: WP8
   m_TagString: Intersection
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -881,7 +881,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1442280482}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &62361351
 BoxCollider:
@@ -981,7 +981,7 @@ GameObject:
   - component: {fileID: 69972089}
   - component: {fileID: 69972090}
   m_Layer: 8
-  m_Name: WP6
+  m_Name: WP7
   m_TagString: Intersection
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -999,7 +999,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1442280482}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &69972090
 BoxCollider:
@@ -2890,7 +2890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &170438942
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2940,10 +2940,11 @@ MonoBehaviour:
     m_Bits: 1280
   playerLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1536
   _patrolPoints:
   - {fileID: 605909701}
   - {fileID: 492881256}
+  - {fileID: 1301429837}
   - {fileID: 1244202564}
   - {fileID: 1983134947}
   - {fileID: 721646169}
@@ -3458,7 +3459,7 @@ Transform:
   m_LocalScale: {x: 0.35714278, y: 1, z: 0.27855155}
   m_Children: []
   m_Father: {fileID: 846760651}
-  m_RootOrder: 36
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &225214513
 BoxCollider:
@@ -4385,7 +4386,7 @@ Transform:
   m_LocalScale: {x: 0.35714278, y: 1, z: 0.27855155}
   m_Children: []
   m_Father: {fileID: 846760651}
-  m_RootOrder: 38
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &272426907
 BoxCollider:
@@ -6765,7 +6766,7 @@ GameObject:
   - component: {fileID: 458069636}
   - component: {fileID: 458069637}
   m_Layer: 8
-  m_Name: WP4
+  m_Name: WP5
   m_TagString: Intersection
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -6783,7 +6784,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1423813059}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &458069637
 BoxCollider:
@@ -7371,7 +7372,7 @@ GameObject:
   - component: {fileID: 511890710}
   - component: {fileID: 511890711}
   m_Layer: 8
-  m_Name: WP8
+  m_Name: WP9
   m_TagString: Intersection
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -7389,7 +7390,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1423813059}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &511890711
 BoxCollider:
@@ -7480,7 +7481,7 @@ GameObject:
   - component: {fileID: 544322121}
   - component: {fileID: 544322122}
   m_Layer: 8
-  m_Name: WP8
+  m_Name: WP9
   m_TagString: Intersection
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -7498,7 +7499,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1442280482}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &544322122
 BoxCollider:
@@ -8907,7 +8908,7 @@ Transform:
   m_LocalScale: {x: 0.35714278, y: 1, z: 0.27855155}
   m_Children: []
   m_Father: {fileID: 846760651}
-  m_RootOrder: 35
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &620932186
 BoxCollider:
@@ -9581,7 +9582,7 @@ GameObject:
   - component: {fileID: 665168913}
   - component: {fileID: 665168914}
   m_Layer: 8
-  m_Name: WP3
+  m_Name: WP4
   m_TagString: Intersection
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -9599,7 +9600,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1423813059}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &665168914
 BoxCollider:
@@ -10912,7 +10913,7 @@ GameObject:
   - component: {fileID: 721646169}
   - component: {fileID: 721646170}
   m_Layer: 8
-  m_Name: WP5
+  m_Name: WP6
   m_TagString: Intersection
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -10930,7 +10931,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1442280482}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &721646170
 BoxCollider:
@@ -13051,7 +13052,6 @@ Transform:
   - {fileID: 966982304}
   - {fileID: 1172816349}
   - {fileID: 1892044621}
-  - {fileID: 1301429837}
   - {fileID: 2133189648}
   - {fileID: 1326901476}
   - {fileID: 41111037}
@@ -13064,7 +13064,6 @@ Transform:
   - {fileID: 1074831986}
   - {fileID: 1877449851}
   - {fileID: 1063144541}
-  - {fileID: 1270486027}
   m_Father: {fileID: 1123057545}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13958,10 +13957,11 @@ MonoBehaviour:
     m_Bits: 1280
   playerLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1536
   _patrolPoints:
   - {fileID: 1223740492}
   - {fileID: 691622512}
+  - {fileID: 1270486027}
   - {fileID: 665168913}
   - {fileID: 458069636}
   - {fileID: 19913850}
@@ -16108,7 +16108,7 @@ Transform:
   m_LocalScale: {x: 0.35714278, y: 1, z: 0.27855155}
   m_Children: []
   m_Father: {fileID: 846760651}
-  m_RootOrder: 42
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1063144542
 BoxCollider:
@@ -16309,7 +16309,7 @@ Transform:
   m_LocalScale: {x: 0.35714278, y: 1, z: 0.27855155}
   m_Children: []
   m_Father: {fileID: 846760651}
-  m_RootOrder: 40
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1074831987
 BoxCollider:
@@ -18091,7 +18091,7 @@ GameObject:
   - component: {fileID: 1244202564}
   - component: {fileID: 1244202565}
   m_Layer: 8
-  m_Name: WP3
+  m_Name: WP4
   m_TagString: Intersection
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -18109,7 +18109,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1442280482}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1244202565
 BoxCollider:
@@ -18425,9 +18425,9 @@ GameObject:
   - component: {fileID: 1270486027}
   - component: {fileID: 1270486028}
   m_Layer: 8
-  m_Name: I (39)
+  m_Name: WP3
   m_TagString: Intersection
-  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -18438,12 +18438,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1270486026}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.7399998, y: 0, z: 3.205}
-  m_LocalScale: {x: 0.35714278, y: 1, z: 0.27855155}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 4.382703, y: 0, z: -12.15524}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 846760651}
-  m_RootOrder: 43
+  m_Father: {fileID: 1423813059}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1270486028
 BoxCollider:
@@ -18731,9 +18731,9 @@ GameObject:
   - component: {fileID: 1301429837}
   - component: {fileID: 1301429838}
   m_Layer: 8
-  m_Name: I (26)
+  m_Name: WP3
   m_TagString: Intersection
-  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -18744,12 +18744,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1301429836}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.7499998, y: 0, z: 3.204}
-  m_LocalScale: {x: 0.35714278, y: 1, z: 0.27855155}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -16.589296, y: 0, z: -12.15165}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 846760651}
-  m_RootOrder: 30
+  m_Father: {fileID: 1442280482}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1301429838
 BoxCollider:
@@ -19193,7 +19193,7 @@ Transform:
   m_LocalScale: {x: 0.35714278, y: 1, z: 0.27855155}
   m_Children: []
   m_Father: {fileID: 846760651}
-  m_RootOrder: 32
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1326901477
 BoxCollider:
@@ -19615,7 +19615,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1351966123
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -19665,7 +19665,7 @@ MonoBehaviour:
     m_Bits: 1280
   playerLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1536
   _patrolPoints:
   - {fileID: 50831268}
   - {fileID: 1979340621}
@@ -19832,7 +19832,7 @@ Transform:
   m_LocalScale: {x: 0.35714278, y: 1, z: 0.27855155}
   m_Children: []
   m_Father: {fileID: 846760651}
-  m_RootOrder: 39
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1367797053
 BoxCollider:
@@ -20932,6 +20932,7 @@ Transform:
   m_Children:
   - {fileID: 1223740492}
   - {fileID: 691622512}
+  - {fileID: 1270486027}
   - {fileID: 665168913}
   - {fileID: 458069636}
   - {fileID: 19913850}
@@ -21062,6 +21063,7 @@ Transform:
   m_Children:
   - {fileID: 605909701}
   - {fileID: 492881256}
+  - {fileID: 1301429837}
   - {fileID: 1244202564}
   - {fileID: 1983134947}
   - {fileID: 721646169}
@@ -22048,7 +22050,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1473688002
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -22117,7 +22119,7 @@ MonoBehaviour:
     m_Bits: 1280
   playerLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1536
   _patrolPoints:
   - {fileID: 61866369}
   - {fileID: 953515361}
@@ -26004,7 +26006,7 @@ GameObject:
   - component: {fileID: 1762094038}
   - component: {fileID: 1762094039}
   m_Layer: 8
-  m_Name: WP6
+  m_Name: WP7
   m_TagString: Intersection
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -26022,7 +26024,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1423813059}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1762094039
 BoxCollider:
@@ -26874,7 +26876,7 @@ Transform:
   m_LocalScale: {x: 0.35714278, y: 1, z: 0.27855155}
   m_Children: []
   m_Father: {fileID: 846760651}
-  m_RootOrder: 34
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1807499348
 BoxCollider:
@@ -27538,7 +27540,7 @@ Transform:
   m_LocalScale: {x: 0.35714278, y: 1, z: 0.27855155}
   m_Children: []
   m_Father: {fileID: 846760651}
-  m_RootOrder: 41
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1877449852
 BoxCollider:
@@ -28331,7 +28333,7 @@ GameObject:
   - component: {fileID: 1983134947}
   - component: {fileID: 1983134948}
   m_Layer: 8
-  m_Name: WP4
+  m_Name: WP5
   m_TagString: Intersection
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -28349,7 +28351,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1442280482}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1983134948
 BoxCollider:
@@ -28937,7 +28939,7 @@ Transform:
   m_LocalScale: {x: 0.35714278, y: 1, z: 0.27855155}
   m_Children: []
   m_Father: {fileID: 846760651}
-  m_RootOrder: 37
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2034321957
 BoxCollider:
@@ -30544,7 +30546,7 @@ Transform:
   m_LocalScale: {x: 0.35714278, y: 1, z: 0.27855155}
   m_Children: []
   m_Father: {fileID: 846760651}
-  m_RootOrder: 31
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2133189649
 BoxCollider:

@@ -28,7 +28,7 @@ public class FleeingBehavior : StateMachineBehaviour
             {
                 directions[i] = -directions[i];
             }
-            Transform nextIntersection = _ghost.DecideNextIntersection(directions);
+            Transform nextIntersection = _ghost.DecideNextIntersection(directions,true);
             if (nextIntersection == null)
             {
                 Debug.Log("Error coudlnt find path");
