@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public int health = 3;
     public bool godmode = false;
     [SerializeField]
-    private float godmodeTime = 10f;
+    private float godmodeTime = 5f;
     private float godmodeTimer = 0f;
     [SerializeField]
     private GameObject godmodeFX;
@@ -45,23 +45,25 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Up") && _playerMotor.CheckDirection(_up))
+        // Player Inputs
+        if (Input.GetButtonDown("Up") && _playerMotor.CheckForWallsInDirection(_up))
         {
             _playerMotor.MoveUp();
         }
-        if (Input.GetButtonDown("Down") && _playerMotor.CheckDirection(_down))
+        if (Input.GetButtonDown("Down") && _playerMotor.CheckForWallsInDirection(_down))
         {
             _playerMotor.MoveDown();
         }
-        if (Input.GetButtonDown("Right") && _playerMotor.CheckDirection(_right))
+        if (Input.GetButtonDown("Right") && _playerMotor.CheckForWallsInDirection(_right))
         {
             _playerMotor.MoveRight();
         }
-        if (Input.GetButtonDown("Left") && _playerMotor.CheckDirection(_left))
+        if (Input.GetButtonDown("Left") && _playerMotor.CheckForWallsInDirection(_left))
         {
             _playerMotor.MoveLeft();
         }
 
+        // God mode control
         if (godmode)
         {
             godmodeTimer -= Time.deltaTime;
@@ -90,6 +92,10 @@ public class PlayerController : MonoBehaviour
         transform.rotation = spawnPoint.rotation;
     }
 
+    /// <summary>
+    /// Check collisions with any Dot, BigDot and Ghost (Death hitbox)
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         if (other != null)

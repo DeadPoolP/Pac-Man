@@ -9,7 +9,7 @@ public class UIController : MonoBehaviour
     [SerializeField]
     private Text scoreValue;
     [SerializeField]
-    private List<GameObject> hps;
+    private List<GameObject> hps; // sprite for lives
     [SerializeField]
     private GameObject gameOverPanel;
 
@@ -18,13 +18,6 @@ public class UIController : MonoBehaviour
     void Start()
     {
         ResetUI();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
-
     }
 
     public void UpdateScore(int score)

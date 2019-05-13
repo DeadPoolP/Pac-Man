@@ -43,15 +43,14 @@ public class WanderBehavior : StateMachineBehaviour
     /// </summary>
     public void Patrol()
     {
-        if (_ghost.transform.position != _target)
+        if (_ghost.transform.position != _target) // if not arrived to patrol waypoint
         {
-            _ghost.MoveToTarget(_target);
+            _ghost.MoveToTarget(_target); // keep going
         }
-        else
+        else // select next waypoint
         {
             _target = _ghost.GetNextPatrolPoint().position;
             _ghost.targetIntersection = _ghost.GetCurrentPatrolPoint();
-
         }
     }
 
@@ -60,28 +59,28 @@ public class WanderBehavior : StateMachineBehaviour
     /// </summary>
     public void GoToPatrol()
     {
-        if (_ghost.transform.position != _target)
+        if (_ghost.transform.position != _target) // if not arrived to patrol 1st waypoint
         {
-            if (_ghost.transform.position == _ghost.targetIntersection.position)
+            if (_ghost.transform.position == _ghost.targetIntersection.position) // if on an intersection
             {
-                Vector3[] directions = _ghost.GetDirection(_target);
-                Transform nextIntersection = _ghost.DecideNextIntersection(directions,false);
-                if (nextIntersection == null)
+                Vector3[] directions = _ghost.GetDirection(_target); // Get 2 priority directions for target
+                Transform nextIntersection = _ghost.DecideNextIntersection(directions,false); // Decide between those directions; if none can be taken, take a random one between the rest of the direction
+                if (nextIntersection == null) // Error case
                 {
                     Debug.Log("Error couldnt find path");
                 }
-                else
+                else // Select next intersection
                 {
                     _ghost.targetIntersection = nextIntersection;
                     _ghost.SetCurrentDirection(nextIntersection);
                 }
             }
-            else
+            else // Move to targeted intersection
             {
                 _ghost.MoveToTarget(_ghost.targetIntersection.position);
             }
         }
-        else
+        else // if arrived to patrol 1st waypoint, start patrol
         {
             _onPatrol = true;
         }

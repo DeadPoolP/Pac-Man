@@ -19,7 +19,7 @@ public class DeadBehavior : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (!_player.GetComponent<PlayerController>().godmode)
+        if (!_player.GetComponent<PlayerController>().godmode) // while pacman is in godmode, no respawn possible
         {
             _ghost.transform.position = _ghost.gateEntrance.position;
             _ghost.SetReady(true);

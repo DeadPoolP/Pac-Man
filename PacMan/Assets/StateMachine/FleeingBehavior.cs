@@ -21,29 +21,29 @@ public class FleeingBehavior : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (_ghost.transform.position == _ghost.targetIntersection.position)
+        if (_ghost.transform.position == _ghost.targetIntersection.position) // if on an intersection
         {
-            Vector3[] directions = _ghost.GetDirection(_player.transform.position);
+            Vector3[] directions = _ghost.GetDirection(_player.transform.position); // Get 2 priority directions for target
             for (int i = 0; i < directions.Length; i++)
             {
-                directions[i] = -directions[i];
+                directions[i] = -directions[i]; // inverse direction because ghost is fleeing not chasing
             }
-            Transform nextIntersection = _ghost.DecideNextIntersection(directions,true);
-            if (nextIntersection == null)
+            Transform nextIntersection = _ghost.DecideNextIntersection(directions,true); // Decide between those directions; if none can be taken, take a random one between the rest of the direction
+            if (nextIntersection == null) // Error case
             {
-                Debug.Log("Error coudlnt find path");
+                Debug.Log("Error couldnt find path");
             }
-            else
+            else // Select next intersection
             {
                 _ghost.targetIntersection = nextIntersection;
                 _ghost.SetCurrentDirection(nextIntersection);
             }
         }
-        else
+        else // Move to targeted intersection
         {
             _ghost.MoveToTarget(_ghost.targetIntersection.position);
         }
-        if (!_player.GetComponent<PlayerController>().godmode)
+        if (!_player.GetComponent<PlayerController>().godmode) // Check if player is in godmode, if yes proceed to Frightened State
         {
             _ghost.SetFrightened(false);
         }

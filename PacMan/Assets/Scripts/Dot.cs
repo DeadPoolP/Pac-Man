@@ -12,6 +12,10 @@ public class Dot : MonoBehaviour
         return scoreValue;
     }
 
+    /// <summary>
+    /// If player collide with dot, destroys it
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

@@ -12,6 +12,7 @@ public class PlayerMotor : MonoBehaviour
 
     private Rigidbody _rigidbody;
     private Transform _transform;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -32,12 +33,10 @@ public class PlayerMotor : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (CheckDirection(_transform.forward))
+        if (CheckForWallsInDirection(_transform.forward))
         {
             NonStopMove();
-
         }
-        
     }
 
     public void NonStopMove()
@@ -70,7 +69,12 @@ public class PlayerMotor : MonoBehaviour
         _transform.rotation = Quaternion.Euler(0f, yAngle, 0f);
     }
 
-    public bool CheckDirection(Vector3 direction)
+    /// <summary>
+    /// Check for any walls in the given direction
+    /// </summary>
+    /// <param name="direction"></param>
+    /// <returns>if no wall returns true, else false</returns>
+    public bool CheckForWallsInDirection(Vector3 direction)
     {
         RaycastHit hit;
         if (Physics.Raycast(_transform.position, direction, out hit, wallDetectionRange))

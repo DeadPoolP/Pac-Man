@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4033613553600272552}
   - component: {fileID: 4033613553600272554}
   m_Layer: 0
-  m_Name: BigDot 1
+  m_Name: BigDot
   m_TagString: BigDot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,4 +104,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b479c116f7c51cb4d947937f6be1a34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 10
+  scoreValue: 50

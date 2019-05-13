@@ -6,24 +6,17 @@ public class Teleport : MonoBehaviour
 {
     public Teleport exit;
     public Vector3 entryDirection;
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    /// <summary>
+    /// Check for player entering portal
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") /*|| other.gameObject.CompareTag("Ghost")*/)
+        if (other.gameObject.CompareTag("Player"))
         {
             PlayerController player = other.gameObject.GetComponent<PlayerController>();
-            if (player.transform.forward == entryDirection)
+            if (player.transform.forward == entryDirection) // can only enter from one side, preventing infinite teleport
                 other.gameObject.transform.position = exit.transform.position;
         }
     }

@@ -9,16 +9,16 @@ public class Ghost : MonoBehaviour
     public float wanderingSpeed = 3;
     public float chasingSpeed = 4;
     public float fleeingSpeed = 2;
-    public LayerMask intersectionLayer;
-    public LayerMask playerLayer;
+    public LayerMask intersectionLayer; // layermask for intersections and walls
+    public LayerMask playerLayer; // layermask for player and walls
     private Rigidbody _rigidbody;
     private Transform _transform;
     [SerializeField]
-    private Transform[] _patrolPoints;
+    private Transform[] _patrolPoints; // waypoints of the patrol route of the ghost
     private Transform[] _intersections;
-    public Transform targetIntersection;
+    public Transform targetIntersection; // current target intersection
     [SerializeField]
-    private int currentIndex = 0;
+    private int currentIndex = 0; // current index in the patrol route
     [SerializeField]
     private float step;
     [SerializeField]
@@ -33,7 +33,7 @@ public class Ghost : MonoBehaviour
     public Material frightened;
 
 
-    private Vector3 currentDirection;
+    private Vector3 currentDirection; // current direction the ghost is going
 
     void Awake()
     {
@@ -56,9 +56,10 @@ public class Ghost : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (LookForPacMan())
+        if (LookForPacMan()) // frequently check for pacman in all directions, if found, proceed to Chasing State
             SetChasing(true);
     }
+
 
     public void Die()
     {
@@ -90,14 +91,17 @@ public class Ghost : MonoBehaviour
     {
         _animator.SetBool("Chasing", b);
     }
+
     public void SetReady(bool b)
     {
         _animator.SetBool("Ready", b);
     }
+
     public void SetFrightened(bool b)
     {
         _animator.SetBool("Frightened", b);
     }
+
     public void SetDead(bool b)
     {
         _animator.SetBool("Dead", b);
@@ -121,10 +125,10 @@ public class Ghost : MonoBehaviour
     }
 
     /// <summary>
-    /// Calculate the closest direction to the direction (vector) ghost -> target
+    /// Calculate the closest strict directions to the direction ghost -> target
     /// </summary>
     /// <param name="target"></param>
-    /// <returns></returns>
+    /// <returns>Returns 2 priority directions toward the target</returns>
     public Vector3[] GetDirection(Vector3 target)
     {
         float dot = Vector3.Dot(_transform.forward, target - _transform.position) / (Vector3.Magnitude(target - transform.position));
@@ -196,7 +200,7 @@ public class Ghost : MonoBehaviour
     /// Given the 2 priority directions, decides what direction to go and returns the next intersection
     /// </summary>
     /// <param name="directions"></param>
-    /// <returns></returns>
+    /// <returns>Returns the next suggested intersection</returns>
     public Transform DecideNextIntersection(Vector3[] directions, bool allowBackwardMove)
     {
         GetAllIntersections();
@@ -238,7 +242,7 @@ public class Ghost : MonoBehaviour
             }
             j++;
         }
-        int randomIndex = Random.Range(1, indexes.Count+1) - 1;
+        int randomIndex = Random.Range(1, indexes.Count+1) - 1; // if no intersections was found in the priority directions, get a random one in the rest
         return _intersections[indexes[randomIndex]];
     }
 
@@ -266,7 +270,10 @@ public class Ghost : MonoBehaviour
         Gizmos.DrawLine(transform.position, transform.position - transform.right * 5);
     }
 
-
+    /// <summary>
+    /// If player exit range from ghost, stop the chasing and hence proceed to Wandering State
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
